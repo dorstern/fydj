@@ -1,0 +1,11 @@
+<div class="input-group col-md-12 margin-10 align-center">
+    <label for="inputHorizontalSuccess" class="col-form-label">I'm a:</label>
+    <label class="checkbox-inline"><input [(ngModel)]="jobTitle" name="jobtitle" type="radio" value="Web Developer">Web Developer</label>
+    <label class="checkbox-inline"><input [(ngModel)]="jobTitle" name="jobtitle" type="radio" value="Mobile Developer">Mobile Developer</label>
+</div>
+<div class="input-group">
+	<input [(ngModel)]="companies" type="text" class="main-input full-width" placeholder="Company Name, e.g. Google, Facebook, Yahoo...">
+	<span class="input-group-btn">
+		<input (click)="submitRequest()" type="submit" class="btn dark" value="Go">
+    </span>
+</div>  

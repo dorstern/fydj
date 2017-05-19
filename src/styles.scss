@@ -1,10 +1,8 @@
-/* App.less */
-
-@white-color: #ffffff;
-@black-color: #383838;
-@green-color: #16BE9B;
-@blue-color: #1C2842;
-@yellow-color: #F1C40F;
+$white-color: #ffffff;
+$black-color: #383838;
+$green-color: #16BE9B;
+$blue-color: #1C2842;
+$yellow-color: #F1C40F;
 
 html, body{
 	height: 100%;
@@ -22,6 +20,7 @@ body{
 .margin-0{margin: 0}
 .margin-top-0{margin-top: 0}
 .margin-bottom-0{margin-bottom: 0}
+.margin-10{margin: 10px;}
 .minus-margin-top-bottom-15{margin-top: -15px; margin-bottom: -15px}
 
 .space{height: 10px}
@@ -51,7 +50,7 @@ strong,b{font-weight: 500}
 
 h1,h2,h3,h4,h5,h6{
 	font-weight: 500;
-	color: @black-color;
+	color: $black-color;
 }
 
 h1{font-size: 3.5rem}
@@ -62,17 +61,17 @@ h5{font-size: 1.9rem}
 h6{font-size: 1.6rem}
 
 a,
-.primary-color{color: @black-color}
-.blue-color{color: @blue-color}
-.green-color{color: @green-color}
-.yellow-color{color: @yellow-color}
-.white-color{color: @white-color}
+.primary-color{color: $black-color}
+.blue-color{color: $blue-color}
+.green-color{color: $green-color}
+.yellow-color{color: $yellow-color}
+.white-color{color: $white-color}
 
-.primary-bg{background-color: @white-color}
-.blue-bg{background-color: @blue-color}
-.green-bg{background-color: @green-color}
-.yellow-bg{background-color: @yellow-color}
-.black-bg{background-color: @black-color}
+.primary-bg{background-color: $white-color}
+.blue-bg{background-color: $blue-color}
+.green-bg{background-color: $green-color}
+.yellow-bg{background-color: $yellow-color}
+.black-bg{background-color: $black-color}
 
 .btn{
     padding: 22px 24px !important;
@@ -81,28 +80,29 @@ a,
 }
 
 .btn.dark{
-	background-color: @black-color;
-	color: @white-color;
+	background-color: $black-color;
+	color: $white-color;
 }
 
 .btn.dark:hover{
 	background-color: #2e2e2e;
-	color: @white-color;
+	color: $white-color;
 }
 
 .btn.light{
-	background-color: @white-color;
-	color: @blue-color;
+	background-color: $white-color;
+	color: $blue-color;
 }
 
 .btn.light:hover{
 	background-color: #f1f1f1;
-	color: @blue-color;
+	color: $blue-color;
 }
 
 header{
-    position: fixed;
     width: 100%;
+	top: 0;
+	background-color: $green-color;
 }
 
 .display-table{
@@ -138,6 +138,7 @@ header{
 
 #main_section{
 	height: 100vh;
+	padding-top: 10%;
 }
 
 .main-input{
@@ -155,5 +156,9 @@ header{
 
 .align-center{
 	text-align: center;
+}
+
+.custom-radio{
+	margin: 0px 10px;
 }
 
