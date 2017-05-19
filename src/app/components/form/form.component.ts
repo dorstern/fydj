@@ -1,18 +1,35 @@
 import { Component } from '@angular/core';
+import { JobsService } from '../../services/jobs/jobs.service';
 
 @Component({
     selector: 'main-form',
     templateUrl: './form.component.html',
-    host: {'class': 'margin-auto full-width'}
+    host: {'class': 'margin-auto full-width'},
+    providers: [JobsService]
 })
 export class FormComponent{
-    companies = "";
-    jobTitle = "";
+    private _companies;
+    private _jobTitle;
 
-    constructor(){}
+    constructor(private _jobsService: JobsService){
+        this._jobTitle = 0;
+    }
 
-    submitRequest(){
-        console.log("I'm a: " + this.jobTitle);
-        console.log("Companies: "+this.companies);
+    findJobs(){
+        let jobs = this._jobsService.getJobs(this.getFormData());
+        this.showJobsResults(jobs);
+    }
+
+    getFormData(){
+        let filters = {
+            companies: this._companies,
+            jobtitle: this._jobTitle
+        };
+
+        return filters;
+    }
+
+    showJobsResults(jobs){
+        console.log(jobs);
     }
 }
