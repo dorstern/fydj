@@ -22,12 +22,12 @@ export class FormComponent{
     }
 
     getFormData(){
-        let filters = {
-            companies: this.companies,
-            jobtitle: this.jobTitle
+        let params = {
+            "companies": this.companies,
+            "jobtitle": this.jobTitle
         };
 
-        return filters;
+        return params;
     }
 
     showJobsResults(jobs){

@@ -8,7 +8,9 @@ export class JobsService{
 
     constructor(private http: Http){}
 
-    getJobs(filters){
-        return this.http.get(this.jobsURL);
+    getJobs(params){
+        let data = Utils.setHttpPostParams(params);
+        let headers = Utils.setHttpHeaders();
+        return this.http.post(this.jobsURL, data, { headers: headers } );
     }
 }
