@@ -8,22 +8,23 @@ import { JobsService } from '../../services/jobs/jobs.service';
     providers: [JobsService]
 })
 export class FormComponent{
-    private _companies;
-    private _jobTitle;
+    private companies;
+    private jobTitle;
 
-    constructor(private _jobsService: JobsService){
-        this._jobTitle = 0;
+    constructor(private jobsService: JobsService){
+        this.jobTitle = 0;
     }
 
     findJobs(){
-        let jobs = this._jobsService.getJobs(this.getFormData());
-        this.showJobsResults(jobs);
+        this.jobsService.getJobs(this.getFormData()).subscribe(
+            (data) => this.showJobsResults(data)   
+        );
     }
 
     getFormData(){
         let filters = {
-            companies: this._companies,
-            jobtitle: this._jobTitle
+            companies: this.companies,
+            jobtitle: this.jobTitle
         };
 
         return filters;
