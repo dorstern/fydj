@@ -4,7 +4,7 @@ import Utils from "../../utils/utils";
 
 @Injectable()
 export class JobsService{
-    private jobsURL = Utils.SERVER_API+"/getJobs.php";
+    private jobsURL = Utils.SERVER_API+"/getOpenPositions.php";
 
     constructor(private http: Http){}
 
