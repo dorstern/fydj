@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { JobsService } from '../../services/jobs/jobs.service';
 
 @Component({
@@ -7,12 +7,14 @@ import { JobsService } from '../../services/jobs/jobs.service';
     host: {'class': 'margin-auto full-width'},
     providers: [JobsService]
 })
-export class FormComponent{
+export class FormComponent implements OnInit{
     private companies;
     private jobTitle;
+    private companiesList;
 
     constructor(private jobsService: JobsService){
         this.jobTitle = 0;
+        this.companies = "";
     }
 
     findJobs(){
@@ -32,5 +34,9 @@ export class FormComponent{
 
     showJobsResults(jobs){
         console.log(jobs);
+    }
+
+    ngOnInit(){
+        this.companiesList = ["Wix", "Google", "Fiverr", "Facebook"];
     }
 }

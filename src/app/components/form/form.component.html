@@ -9,8 +9,8 @@
   </div>
 </div>
 <div class="input-group">
-	<input [(ngModel)]="companies" type="text" class="main-input full-width" placeholder="Company Name, e.g. Google, Facebook, Yahoo...">
+	<input auto-complete [(ngModel)]="companies" [source]="companiesList" class="main-input full-width" placeholder="Company Name, e.g. Google, Facebook, Yahoo...">
 	<span class="input-group-btn">
 		<input (click)="findJobs()" type="submit" class="btn dark" value="Go">
     </span>
-</div>  
+</div>
