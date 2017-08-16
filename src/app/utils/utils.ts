@@ -16,7 +16,6 @@ export default class Utils{
     static setHTTPHeaders(){
         let headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-        //set XDebug headers
 
         return headers;
     }

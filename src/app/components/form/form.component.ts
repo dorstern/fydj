@@ -1,39 +1,39 @@
 import { Component, OnInit } from '@angular/core';
-import { JobsService } from '../../services/jobs/jobs.service';
+import { OpenPositionsService } from '../../services/positions/positions.service';
 
 @Component({
     selector: 'main-form',
     templateUrl: './form.component.html',
     host: {'class': 'margin-auto full-width'},
-    providers: [JobsService]
+    providers: [OpenPositionsService]
 })
 export class FormComponent implements OnInit{
     private companies;
-    private jobTitle;
+    private positionTitle;
     private companiesList;
+    private data = [];
 
-    constructor(private jobsService: JobsService){
-        this.jobTitle = 0;
+    constructor(private openPositionService: OpenPositionsService){
+        this.positionTitle = 0;
         this.companies = "";
     }
 
-    findJobs(){
-        this.jobsService.getJobs(this.getFormData()).subscribe(
-            (data) => this.showJobsResults(data)   
-        );
+    findOpenPositions(){
+        this.openPositionService.getOpenPositions(this.getFormData())
+            .subscribe(data => this.showOpenPositionsResults(data));
     }
 
     getFormData(){
         let params = {
             "companies": this.companies,
-            "jobtitle": this.jobTitle
+            "position_title": this.positionTitle
         };
 
         return params;
     }
 
-    showJobsResults(jobs){
-        console.log(jobs);
+    showOpenPositionsResults(data){
+        console.log(data);
     }
 
     ngOnInit(){
